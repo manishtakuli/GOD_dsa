@@ -11,7 +11,7 @@ void traversal (struct Node * temp){
         temp = temp -> next;
     }
 }
-struct Node*insertend(struct Node*head, int data){
+struct Node* insertend(struct Node*head, int data){
     struct Node * newnode = (struct Node*) malloc(sizeof(struct Node));
     struct Node * temp = head;
     while(temp -> next != NULL){
@@ -36,7 +36,7 @@ int main (){
     second -> data = 30;
     second -> next = NULL;
 
-    insertend(head,40);
+    head = insertend(head,40);
     traversal(head);
     return 0;
 

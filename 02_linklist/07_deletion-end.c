@@ -12,7 +12,7 @@ void traversal(struct Node*head){
         ptr= ptr-> next;
     }
 }
-void deletionend(struct Node *head)
+struct Node* deletionend(struct Node *head)
 {
     struct Node *ptr = head;
     while (ptr->next->next != NULL)
@@ -22,6 +22,7 @@ void deletionend(struct Node *head)
     struct Node *temp = ptr->next;
     ptr->next = NULL;
     free(temp);
+    return head;
 }
 int main()
 {
@@ -39,7 +40,7 @@ int main()
     second->next = NULL;
      
     
-    deletionend(head);
+    head = deletionend(head);
     traversal(head);
     return 0;
 }
